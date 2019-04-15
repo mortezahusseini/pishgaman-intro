@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="app.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <title>Monster Slayer</title>
+</head>
+<body>
+
+<div class="container" id="app">
+    <section class="row m-5">
+        <div class="col-12 row">
+            <div class="col-6 text-center">
+                <h4 class="text-center pb-3"> خون تو </h4>
+                <div class="healthBar">
+                    <div
+                        class="healthBar text-center text-light m-0"
+                        :style="{width: playerHealth + '%'}"
+                        style="background-color: green">
+                        {{ playerHealth }}
+                    </div>
+                </div>
+            </div>
+            <div class="col-6 text-center">
+                <h4 class="text-center pb-3"> خون هیولا </h4>
+                <div class="healthBar">
+                    <div
+                        class="healthBar text-center text-light m-0"
+                        :style="{width: monsterHealth + '%'}"
+                        style="background-color: orange">
+                        {{ monsterHealth }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="row card controls" v-if="!gameIsRunning">
+        <div class="col-12 text-center m-3">
+            <button class="btn btn-primary" id="start-game" @click="startGame">بازی رو شروع کن</button>
+        </div>
+    </section>
+    <section class="row card shadow controls" v-else>
+        <div class="col-12 text-center m-3">
+            <button class="btn btn-success" @click="attack">ضربه بزن لعنتی</button>
+            <button class="btn btn-danger" @click="specialAttack">محکم ضربه بزن</button>
+            <button class="btn btn-secondary" @click="heal">خون بده</button>
+            <button class="btn btn-info" @click="giveUp">بازی رو تموم کن</button>
+        </div>
+    </section>
+    <section class="row log card shadow mt-3" v-if="turns.length > 0">
+        <div class="col-12">
+            <ul class="list-unstyled list-group text-center">
+               <li class="text-center mt-2"
+                   v-for="turn in turns"
+                   :class="{ 'player-turn' : turn.isPlayer, 'monster-turn' : !turn.isPlayer }">
+                   {{ turn.text }}
+               </li>
+            </ul>
+        </div>
+    </section>
+</div>
+
+<script src="app.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="fa">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Lato:100,300,600" rel="stylesheet" type="text/css">
+    <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css" rel="stylesheet" type="text/css">
+    <link type="text/css" rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="../../fonts.css">
+    <title> Pig Game </title>
+</head>
+<body>
+  <div class="position-absolute">
+  <button type="button" class="btn btn-info btn-lg position-relative px-0 more" data-toggle="modal" data-target="#myModal"> درباره بازی </button>
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" style="right:0px" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Pig Game بازی</h4>
+        </div>
+        <div class="modal-body">
+          <ul class="list-unstyled text-right" dir="rtl">
+            <li> رقابت بین دو نفر به این صورت انجام میشود که با فشردن کلید "تاس را بچرخان" دو تاس
+            عدد به طور تصادفی در اختیار میگذارد. با فشردن کلید "ثبت" این مقدار ذخیره میشود.  </li>
+            <li> ابتدا باید مقدار نهایی برای پایان دادن به بازی باید وارد کنید </li>
+            <li> هر بازیکن فقط میتواند دوبار کلید "تاس را بچرخان" را کلیک کنید. اگر یکی ار تاس ها عدد 1 را بیاورد
+            شخص آن دور را باخته است. و شخص دیگر باید شروع کند </li>
+            <li> بازیکن ها نباید دوبار پشت سر هم اعداد 6 را بیاوردند. در این صورت باخته اند و بازی ابتدا شروع خواهد شد </li>
+            <li> زیاد گیر نده. میخواستم جاوااسکریپت رو مرور کنم. خخخخ </li>
+          </ul>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+
+<div class="container wrapper clearfix">
+    <div class="row text-center">
+        <div class="player-0-panel active">
+            <div class="player-name" id="name-0"> بازیکن اول </div>
+            <div class="player-score" id="score-0"> 43 </div>
+            <div class="player-current-box">
+                <div class="player-current-label"> امتیاز </div>
+                <div class="player-current-score" id="current-0"> 11 </div>
+            </div>
+        </div>
+        <div class="player-1-panel">
+            <div class="player-name" id="name-1"> بازیکن دوم </div>
+            <div class="player-score" id="score-1"> 43 </div>
+            <div class="player-current-box">
+                <div class="player-current-label"> امتیاز </div>
+                <div class="player-current-score" id="current-1"> 11 </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <button class="btn-new"><i class="ion-ios-plus-outline"></i> بازی جدید </button>
+        <button class="btn-roll"><i class="ion-ios-loop"></i> تاس رو بچرخان </button>
+        <button class="btn-hold"><i class="ion-ios-download-outline"></i> ثبت </button>
+
+        <input type="number" placeholder="Final score" class="final-score">
+
+        <img src="images/dice-5.png" alt="Dice" class="dice" id="dice-0">
+        <img src="images/dice-5.png" alt="Dice" class="dice" id="dice-1">
+    </div>
+</div>
+
+<script src="js/jquery-3.3.1.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
